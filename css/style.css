@@ -191,23 +191,27 @@ body {
   justify-content: center;
   overflow-x: auto; /* Agrega desplazamiento horizontal si el contenido es demasiado ancho */
   margin-top: 20px;
+  margin-bottom: 200px;
+ padding-bottom: 0px;
+  gap: 40px;
 }
 
 .imagen {
-  width: 100%; /* Hacer que la imagen ocupe el ancho completo del contenedor */
-  height: auto; /* Hace que la altura de la imagen se ajuste automáticamente para mantener la proporción */
+  width: 380px; /* Hacer que la imagen ocupe el ancho completo del contenedor */
+  height: 100%; /* Hace que la altura de la imagen se ajuste automáticamente para mantener la proporción */
   margin: 0;
 }
 
 .tarjeta {
   flex: 0 0 auto; /* Evita que las tarjetas cambien de tamaño */
-  width: 90%; /* Anchura dinámica para adaptarse al ancho del contenedor */
+  width: 380px; /* Anchura dinámica para adaptarse al ancho del contenedor */
   min-width: 280px; /* Establece un ancho mínimo para las tarjetas */
   margin: 0 5px 20px; /* Ajusta los márgenes de las tarjetas */
   transition: transform 0.5s ease;
   cursor: pointer;
   margin-top: 50px;
   margin-bottom: 20px;
+  
 }
 
 .titulo {
@@ -251,7 +255,7 @@ body {
 
 .footer {
   background: #000;
-  padding: 10px 0px; /* Incrementar el padding para mejorar la legibilidad en dispositivos móviles */
+  padding: 5px 0px 0px 0px; /* Incrementar el padding para mejorar la legibilidad en dispositivos móviles */
   font-family: 'Play', sans-serif;
   text-align: center;
   font-size: 20px;
@@ -312,4 +316,4 @@ body {
 
 
 
-
+ 
