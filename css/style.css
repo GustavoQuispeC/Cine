@@ -4,41 +4,48 @@ body {
 }
 
 /*!-------- TITULO PROXIMAMENTE-------------------------------------------------------------------------*/
-  .proximosEstrenos{
-	border: 3px solid black;
-    border-radius: 6px  ;
-    text-align: center;
-    margin: 5px 10px 5px 10px;
-    padding: 10px;
-    color: #492b7c;
-    background-color: #0a2f35;
-    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
-    font-size: 40px;
-  }
-  .title {
-	text-align: center;
-	display: -webkit-box;
-	display: flex;
-	-webkit-box-orient: vertical;
-	-webkit-box-direction: normal;
-	        flex-direction: column;
-	-webkit-box-align: center;
-	        align-items: center;
-	-webkit-box-pack: center;
-	        justify-content: center;
-	letter-spacing: 1px;
+.proximosEstrenos {
+  border: 3px solid black;
+  border-radius: 6px;
+  text-align: center;
+  margin: 5px 10px 5px 10px;
+  padding: 10px;
+  color: #492b7c;
+  background-color: #0a2f35;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+  font-size: 40px;
+}
+
+.title {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 1px;
 }
 
 .fondo {
-	background-image: url(https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif);
-	background-size: cover;
-	color: transparent;
-	-moz-background-clip: text;
-	-webkit-background-clip: text;
-	text-transform: uppercase;
-	font-size: 60px;
-	line-height: .75;
-	margin: 10px 0;
+  background-image: url(https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif);
+  background-size: cover;
+  color: transparent;
+  -moz-background-clip: text;
+  -webkit-background-clip: text;
+  text-transform: uppercase;
+  font-size: 60px;
+  line-height: .75;
+  margin: 10px 0;
+}
+
+@media (max-width: 768px) {
+  .proximosEstrenos {
+      font-size: 30px; /* Reducir el tamaño de fuente en dispositivos móviles */
+      padding: 5px; /* Reducir el padding en dispositivos móviles */
+  }
+
+  .fondo {
+      font-size: 40px; /* Reducir el tamaño de fuente en dispositivos móviles */
+  }
 }
 
   .lineaSuperior{
@@ -57,6 +64,7 @@ body {
 
 /* !-----------------------------SlideShow-------------------------------------------------------------------------*/
 
+
 .contenedor {
   width: 100%;
   display: flex;
@@ -64,6 +72,16 @@ body {
   height: 500px;
   gap: 10px;
   margin-top: 30px;
+  overflow-x: auto; /* Agrega desplazamiento horizontal si el contenido es demasiado ancho */
+
+  /* Establece una sola columna en dispositivos móviles */
+  flex-wrap: nowrap;
+
+  @media (max-width: 768px) {
+    .contenedor > div {
+      flex: 0 0 100%; /* Establece el ancho de la imagen al 100% para una sola columna en dispositivos móviles */
+    }
+  }
 
   > div {
     flex: 0 0 120px;
@@ -143,6 +161,20 @@ body {
     }
   }
 }
+
+/* Media query para dispositivos de pantalla mediana */
+@media (max-width: 992px) {
+  .contenedor > div {
+    flex: 0 0 calc(50% - 10px); /* 2 columnas en pantallas medianas */
+  }
+}
+
+/* Media query para dispositivos de pantalla pequeña */
+@media (max-width: 768px) {
+  .contenedor > div {
+    flex: 0 0 100%; /* 1 columna en pantallas pequeñas */
+  }
+}
 /*!----------CARTELERA----------------------------------------*/
 .cartelera{
 	color: white;
@@ -154,46 +186,42 @@ body {
 /*!----------CARD----------------------------------------*/
 
 .contenedor-tarjetas {
-    display: flex;
-    flex-wrap: nowrap; /* Evita que las tarjetas se envuelvan a la siguiente línea */
-    justify-content: center;
-    overflow-x: auto; /* Agrega desplazamiento horizontal si el contenido es demasiado ancho */
-	margin-top: 20px;
-	
+  display: flex;
+  flex-wrap: wrap; /* Permitir que las tarjetas se envuelvan */
+  justify-content: center;
+  overflow-x: auto; /* Agrega desplazamiento horizontal si el contenido es demasiado ancho */
+  margin-top: 20px;
 }
 
 .imagen {
-	width: 330px;
-	height: 450px;
-	margin: 0;
-	
+  width: 100%; /* Hacer que la imagen ocupe el ancho completo del contenedor */
+  height: auto; /* Hace que la altura de la imagen se ajuste automáticamente para mantener la proporción */
+  margin: 0;
 }
 
 .tarjeta {
-    margin: 0 10px; /* Ajusta los márgenes entre las tarjetas según sea necesario */
-    flex: 0 0 auto; /* Evita que las tarjetas cambien de tamaño */
-    width: 330px; /* Anchura fija para las tarjetas */
-	margin: 0 30px; 
-	transition: transform 0.5s ease;
-	cursor: pointer;
-	margin-top: 50px;
-	margin-bottom:200px ;
+  flex: 0 0 auto; /* Evita que las tarjetas cambien de tamaño */
+  width: 90%; /* Anchura dinámica para adaptarse al ancho del contenedor */
+  min-width: 280px; /* Establece un ancho mínimo para las tarjetas */
+  margin: 0 5px 20px; /* Ajusta los márgenes de las tarjetas */
+  transition: transform 0.5s ease;
+  cursor: pointer;
+  margin-top: 50px;
+  margin-bottom: 20px;
 }
 
-
-
 .titulo {
-    font-size: 20px;
-    font-family: 'rockwell', sans-serif;
-    font-weight: bold;
-    padding: 10px;
-    text-align: center;
-    color: black;
-    background-color: #cacf00;
-    border-radius: 15px 15px 0 0;
-    word-break: break-all;
-	margin-top:0 ;
-	margin-bottom: 0;
+  font-size: 20px;
+  font-family: 'rockwell', sans-serif;
+  font-weight: bold;
+  padding: 10px;
+  text-align: center;
+  color: black;
+  background-color: #cacf00;
+  border-radius: 15px 15px 0 0;
+  word-break: break-all;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .director,
@@ -201,44 +229,45 @@ body {
 .rate,
 .genre,
 .año {
-    font-size: 16px;
-    font-family: 'rockwell', sans-serif;
-    color: black;
-    padding: 10px 0px 5px 20px;
-    background-color: #cacf00;
-    border-radius: 0; /* Quita el redondeo de las esquinas */
-	margin-top: 0;
-	margin-bottom: 0;
+  font-size: 16px;
+  font-family: 'rockwell', sans-serif;
+  color: black;
+  padding: 10px 0px 5px 20px;
+  background-color: #cacf00;
+  border-radius: 0; /* Quita el redondeo de las esquinas */
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .año {
-    border-radius: 0px 0px 15px 15px;
+  border-radius: 0px 0px 15px 15px;
 }
 
 .tarjeta:hover {
-    transform: scale(1.1); /* Ajusta el valor según el nivel de zoom deseado */
-	
+  transform: scale(1.1); /* Ajusta el valor según el nivel de zoom deseado */
 }
 
 /*!----------FOOTER----------------------------------------*/
 
 .footer {
   background: #000;
-  padding: 2px 0px;
+  padding: 10px 0px; /* Incrementar el padding para mejorar la legibilidad en dispositivos móviles */
   font-family: 'Play', sans-serif;
   text-align: center;
   font-size: 20px;
-  position: fixed; /* Posiciona el footer de forma fija */
-  bottom: 0; /* Lo coloca en la parte inferior */
-  width: 100%; /* Ajusta el ancho para que ocupe toda la pantalla */
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: block; /* Asegúrate de que el footer esté visible por defecto */
 }
 
 .footer .row_footer {
   width: 100%;
-  margin: 1% 0%;
-  padding: 0.3% 0%;
+  margin: 5px 0; /* Reducir el espacio entre elementos */
+  padding: 5px 0; /* Reducir el espacio interno */
   color: gray;
   font-size: 0.8em;
+  line-height: 1.5em; /* Restaurar el interlineado normal para mejorar la legibilidad */
 }
 
 .footer .row_footer a {
@@ -257,28 +286,17 @@ body {
 
 .footer .row_footer ul li {
   display: inline-block;
-  margin: 0px 30px;
+  margin: 0px 10px; /* Reducir el margen entre elementos */
 }
 
 .footer .row_footer a i {
-  font-size: 2em;
-  margin: 0% 1%;
+  font-size: 1.5em; /* Reducir el tamaño de los iconos */
+  margin: 0 5px; /* Reducir el espacio alrededor de los iconos */
 }
 
 @media (max-width: 720px) {
   .footer {
-      text-align: left;
-      padding: 5%;
-  }
-
-  .footer .row_footer ul li {
-      display: block;
-      margin: 5px 0px;
-      text-align: left;
-  }
-
-  .footer .row_footer a i {
-      margin: 0% 3%;
+    display: none; /* Ocultar el footer en dispositivos móviles */
   }
 }
 
