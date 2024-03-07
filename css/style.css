@@ -1,0 +1,297 @@
+body {
+    overflow-x: hidden;
+    
+}
+
+/*!-------- TITULO PROXIMAMENTE-------------------------------------------------------------------------*/
+  .proximosEstrenos{
+	border: 3px solid black;
+    border-radius: 6px  ;
+    text-align: center;
+    margin: 5px 10px 5px 10px;
+    padding: 10px;
+    color: #492b7c;
+    background-color: #0a2f35;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+    font-size: 40px;
+  }
+  .title {
+	text-align: center;
+	display: -webkit-box;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	        flex-direction: column;
+	-webkit-box-align: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	        justify-content: center;
+	letter-spacing: 1px;
+}
+
+.fondo {
+	background-image: url(https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif);
+	background-size: cover;
+	color: transparent;
+	-moz-background-clip: text;
+	-webkit-background-clip: text;
+	text-transform: uppercase;
+	font-size: 60px;
+	line-height: .75;
+	margin: 10px 0;
+}
+
+  .lineaSuperior{
+	border: none;
+    border-top: 2px solid #cacf00;
+	
+	margin-bottom: 45px;
+}
+.lineaInferior{
+	border: none;
+    border-top: 2px solid #cacf00;
+	margin-top: 20px;
+	
+}
+ 
+
+/* !-----------------------------SlideShow-------------------------------------------------------------------------*/
+
+.contenedor {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 500px;
+  gap: 10px;
+  margin-top: 30px;
+
+  > div {
+    flex: 0 0 120px;
+    border-radius: 0.5rem;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+    box-shadow: 1px 5px 15px #1e0e3e;
+    position: relative;
+    overflow: hidden;
+
+    &:nth-of-type(1) {
+      background: url("../assets/img/0243323.webp")
+        no-repeat 50% / cover;
+    }
+    &:nth-of-type(2) {
+      background: url("../assets/img/terminator.webp")
+        no-repeat 50% / cover;
+    }
+    &:nth-of-type(3) {
+      background: url("../assets/img/Indiana.jpg")
+        no-repeat 50% / cover;
+    }
+    &:nth-of-type(4) {
+      background: url("../assets/img/MarioBros.jpg")
+        no-repeat 50% / cover;
+    }
+	&:nth-of-type(5) {
+		background: url("../assets/img/Rocky.jpg")
+		  no-repeat 50% / cover;
+	  }
+	  &:nth-of-type(6) {
+		background: url("../assets/img/Thor.jpeg")
+		  no-repeat 50% / cover;
+	  }
+	  &:nth-of-type(7) {
+		background: url("../assets/img/Momia.jpg")
+		  no-repeat 50% / cover;
+	  }
+
+    .content {
+      font-size: 1.5rem;
+      color: yellow;
+      display: flex;
+      align-items: center;
+      padding: 15px;
+      opacity: 0;
+      flex-direction: column;
+      height: 100%;
+      justify-content: flex-end;
+      background: rgb(2, 2, 46);
+      background: linear-gradient(
+        0deg,
+        rgba(2, 2, 46, 0.6755077030812324) 0%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      transform: translatey(100%);
+      transition: opacity 0.5s ease-in-out, transform 0.5s 0.2s;
+      visibility: hidden;
+
+      span {
+        display: block;
+        margin-top: 5px;
+        font-size: 1.2rem;
+      }
+    }
+
+    &:hover {
+      flex: 0 0 250px;
+      box-shadow: 1px 3px 15px #7645d8;
+      transform: translatey(-30px);
+    }
+
+    &:hover .content {
+      opacity: 1;
+      transform: translatey(0%);
+      visibility: visible;
+    }
+  }
+}
+/*!----------CARTELERA----------------------------------------*/
+.cartelera{
+	color: white;
+	text-align: left;
+	margin-left: 100px;
+}
+
+
+/*!----------CARD----------------------------------------*/
+
+.contenedor-tarjetas {
+    display: flex;
+    flex-wrap: nowrap; /* Evita que las tarjetas se envuelvan a la siguiente línea */
+    justify-content: center;
+    overflow-x: auto; /* Agrega desplazamiento horizontal si el contenido es demasiado ancho */
+	margin-top: 20px;
+	
+}
+
+.imagen {
+	width: 330px;
+	height: 450px;
+	margin: 0;
+	
+}
+
+.tarjeta {
+    margin: 0 10px; /* Ajusta los márgenes entre las tarjetas según sea necesario */
+    flex: 0 0 auto; /* Evita que las tarjetas cambien de tamaño */
+    width: 330px; /* Anchura fija para las tarjetas */
+	margin: 0 30px; 
+	transition: transform 0.5s ease;
+	cursor: pointer;
+	margin-top: 50px;
+	margin-bottom:200px ;
+}
+
+
+
+.titulo {
+    font-size: 20px;
+    font-family: 'rockwell', sans-serif;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+    color: black;
+    background-color: #cacf00;
+    border-radius: 15px 15px 0 0;
+    word-break: break-all;
+	margin-top:0 ;
+	margin-bottom: 0;
+}
+
+.director,
+.duracion,
+.rate,
+.genre,
+.año {
+    font-size: 16px;
+    font-family: 'rockwell', sans-serif;
+    color: black;
+    padding: 10px 0px 5px 20px;
+    background-color: #cacf00;
+    border-radius: 0; /* Quita el redondeo de las esquinas */
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.año {
+    border-radius: 0px 0px 15px 15px;
+}
+
+.tarjeta:hover {
+    transform: scale(1.1); /* Ajusta el valor según el nivel de zoom deseado */
+	
+}
+
+/*!----------FOOTER----------------------------------------*/
+
+.footer {
+  background: #000;
+  padding: 2px 0px;
+  font-family: 'Play', sans-serif;
+  text-align: center;
+  font-size: 20px;
+  position: fixed; /* Posiciona el footer de forma fija */
+  bottom: 0; /* Lo coloca en la parte inferior */
+  width: 100%; /* Ajusta el ancho para que ocupe toda la pantalla */
+}
+
+.footer .row_footer {
+  width: 100%;
+  margin: 1% 0%;
+  padding: 0.3% 0%;
+  color: gray;
+  font-size: 0.8em;
+}
+
+.footer .row_footer a {
+  text-decoration: none;
+  color: gray;
+  transition: 0.5s;
+}
+
+.footer .row_footer a:hover {
+  color: yellow;
+}
+
+.footer .row_footer ul {
+  width: 100%;
+}
+
+.footer .row_footer ul li {
+  display: inline-block;
+  margin: 0px 30px;
+}
+
+.footer .row_footer a i {
+  font-size: 2em;
+  margin: 0% 1%;
+}
+
+@media (max-width: 720px) {
+  .footer {
+      text-align: left;
+      padding: 5%;
+  }
+
+  .footer .row_footer ul li {
+      display: block;
+      margin: 5px 0px;
+      text-align: left;
+  }
+
+  .footer .row_footer a i {
+      margin: 0% 3%;
+  }
+}
+
+
+
+
+	
+  #map-container {
+    height: 400px; /* Establece la altura deseada para el mapa */
+    width: 100%;
+  }
+
+
+
+
+
